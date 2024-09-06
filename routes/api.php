@@ -19,5 +19,6 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 
     Route::group(['prefix' => 'tasks', 'as' => 'task.'], function () {
         Route::get('', [TaskController::class, 'index'])->name('index');
+        Route::post('create', [TaskController::class, 'create'])->name('create');
     });
 });

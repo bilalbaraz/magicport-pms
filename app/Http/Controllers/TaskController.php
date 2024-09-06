@@ -2,18 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\Services\TaskService;
 use Illuminate\Http\Request;
 
 class TaskController extends Controller
 {
-    public function __construct()
+    private TaskService $taskService;
+
+    public function __construct(TaskService $taskService)
     {
-        //
+        $this->taskService = $taskService;
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        return response()->json(['success' => true]);
+        $projectId = $request->get('project_id');
+        $tasks = $this->taskService->getTasksByProjectId($projectId);
+
+        return response()->json(['success' => true, 'tasks' => $tasks]);
     }
 
     public function create()
