@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Repositories\ProjectService;
 use Illuminate\Http\Request;
 
 class ProjectController extends Controller
 {
-    public function __construct()
+    private ProjectService $projectService;
+
+    public function __construct(ProjectService $projectService)
     {
-        //
+        $this->projectService = $projectService;
     }
 
     public function index()
