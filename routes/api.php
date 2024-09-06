@@ -14,6 +14,7 @@ Route::group(['prefix' => 'auth', 'as' => 'auth.'], function () {
 Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::group(['prefix' => 'projects', 'as' => 'project.'], function () {
         Route::get('', [ProjectController::class, 'index'])->name('index');
+        Route::post('create', [ProjectController::class, 'create'])->name('create');
     });
 
     Route::group(['prefix' => 'tasks', 'as' => 'task.'], function () {

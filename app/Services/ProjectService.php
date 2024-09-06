@@ -2,6 +2,7 @@
 
 namespace App\Services;
 use App\Repositories\ProjectRepository;
+use Illuminate\Database\Eloquent\Collection;
 
 class ProjectService
 {
@@ -10,5 +11,10 @@ class ProjectService
     public function __construct(ProjectRepository $projectRepository)
     {
         $this->projectRepository = $projectRepository;
+    }
+
+    public function getProjects(): Collection
+    {
+        return $this->projectRepository->getProjectsWithoutTasks();
     }
 }

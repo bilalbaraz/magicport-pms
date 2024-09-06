@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Project\CreateProjectRequest;
 use App\Services\ProjectService;
+use Illuminate\Http\Request;
 
 class ProjectController extends Controller
 {
@@ -13,14 +15,18 @@ class ProjectController extends Controller
         $this->projectService = $projectService;
     }
 
-    public function index()
+    public function index(Request $request)
     {
-        return response()->json(['success' => true]);
+        $projects = $this->projectService->getProjects();
+
+        return response()->json(['success' => true, 'data' => $projects]);
     }
 
-    public function create()
+    public function create(CreateProjectRequest $request)
     {
-        return response()->json(['success' => true]);
+        $data = $request->validated();
+
+        return response()->json(['success' => true, $data]);
     }
 
 
