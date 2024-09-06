@@ -18,4 +18,9 @@ class ProjectRepository
     {
         return $this->project->get();
     }
+
+    public function createProject(array $projectData): ?Project
+    {
+        return $this->project->create($projectData);
+    }
 }

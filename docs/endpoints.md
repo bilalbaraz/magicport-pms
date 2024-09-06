@@ -43,3 +43,17 @@ http://localhost/api
 **Method:** `GET`
 
 Retrieves authenticated user informations.
+
+### 4. **Retrieve Projects**
+
+**Endpoint:** `/projects`  
+**Method:** `GET`
+
+Retrieves projects list that have been created.
+
+### 5. **Create New Project**
+
+**Endpoint:** `/projects/create`  
+**Method:** `POST`
+
+Creates project.
