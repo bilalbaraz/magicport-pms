@@ -1,66 +1,193 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# MagicPort PMS
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+[![Coverage Status](https://coveralls.io/repos/github/bilalbaraz/magicport-pms/badge.svg)](https://coveralls.io/github/bilalbaraz/magicport-pms)
 
-## About Laravel
+## Installation
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+To get started with the MagicPort PMS Project, follow these steps to set up your development environment.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Prerequisites
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Ensure you have the following installed on your system:
 
-## Learning Laravel
+- **Docker**: Used to create a consistent development environment.
+- **Docker Compose**: To manage multi-container Docker applications.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### Steps
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+1. **Clone the Repository**: Begin by cloning the repository to your local machine:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+    ```bash
+    git clone https://github.com/bilalbaraz/magicport-pms.git
+    cd magicport-pms
+    ```
 
-## Laravel Sponsors
+2. **Install Dependencies**: Install the necessary PHP dependencies using Composer:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+    ```bash
+    composer install
+    ```
 
-### Premium Partners
+3. **Set Up Environment Variables**: Copy the example environment file and update it with your local settings:
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+    ```bash
+    cp .env.example .env
+    ```
+
+4. **Generate Application Key**: Generate the Laravel application key, which is used for encryption:
+
+    ```bash
+    php artisan key:generate
+    ```
+
+5. **Start Docker Containers**: Use Laravel Sail to start the Docker containers:
+
+    ```bash
+    ./vendor/bin/sail up -d
+    ```
+
+6. **Run Database Migrations with Seeders**: Set up your database by running the migrations:
+
+    ```bash
+    ./vendor/bin/sail artisan migrate --seed
+    ```
+
+This will create the necessary tables and seed the database with demo data.
+
+7. **Access the Application**:
+Once everything is set up, you can access the application in your browser at:
+
+    ```bash
+    http://localhost
+    ```
+
+Your MagicPort PMS development environment should now be up and running. You can begin developing and testing the API according to your project's requirements.
+
+**Stop Docker Containers**: Use Laravel Sail to stop the Docker containers:
+
+```bash
+./vendor/bin/sail down
+```
+
+## API Endpoints Overview
+
+| Endpoint                      | Description                                            |
+|-------------------------------|--------------------------------------------------------|
+| `/x`                     | XXX                                                    |
+| `/x`            | XXX                                                    |
+| `/x              | XXX                                                    |
+
+You can check out the full list of endpoints by visiting the [endpoints](docs/endpoints.md) page.
 
 ## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+We welcome contributions from the community! Whether you're fixing a bug, adding a new feature, or improving documentation, your help is greatly appreciated. Please follow the guidelines below to ensure a smooth contribution process.
 
-## Code of Conduct
+### How to Contribute
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+1. **Fork the Repository**: Start by forking the repository to your own GitHub account.
 
-## Security Vulnerabilities
+2. **Create a Branch**: Create a new branch for your feature or bug fix.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+3. **Make Your Changes**: Make your code changes in your branch. Please ensure your code adheres to the project's coding standards and passes all tests.
 
-## License
+4. **Run Tests**: Run the existing tests to ensure that your changes do not break anything.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+    ```bash
+    ./vendor/bin/phpunit
+    ```
+
+5. **Commit Your Changes**: Write clear, concise commit messages explaining your changes.
+
+    ```bash
+    git commit -m "Add a descriptive commit message"
+    ```
+
+6. **Push to GitHub**: Push your changes to your forked repository.
+
+    ```bash
+    git push origin feature/your-feature-name
+    ```
+7. **Open a Pull Request**: Open a pull request on the main repository. Provide a detailed description of your changes and any relevant issue numbers.
+
+Thank you for contributing!
+
+## Coding Standards
+
+This project adheres to the [PSR-12](https://www.php-fig.org/psr/psr-12/) coding standard. [Laravel Pint](https://laravel.com/docs/11.x/pint) was used for PSR-12 checks during development.
+
+## Testing
+
+**Current Status:**
+
+You can run the following command to generate and view the code coverage report in your local development environment:
+
+```bash
+./vendor/bin/sail test --coverage-html reports
+```
+This will allow you to view the report in the reports directory.
+
+## Credits
+
+This project was made possible through the collaborative efforts of several individuals and organizations. We would like to extend our sincere gratitude to everyone who contributed to the development and success of this project.
+
+- [**Bilal Baraz**](https://github.com/bilalbaraz) - Computer Engineer.
+
+A special thank you to the open-source community and the developers behind the frameworks, libraries, and tools that made this project possible, including:
+
+- [**Laravel**](https://laravel.com/) - for providing an elegant and robust PHP framework.
+- [**PHP**](https://www.php.net/) - for being the backbone of our server-side development.
+- [**MySQL**](https://www.mysql.com/) - for a reliable and powerful database solution.
+- [**Docker**](https://www.docker.com/) - for simplifying our development and deployment processes.
+- [**GitHub**](https://github.com/) - for offering an excellent platform for version control and collaboration.
+
+## Troubleshooting
+
+If you encounter any issues while setting up or running the MagicPort PMS Project, this section will help you diagnose and resolve common problems.
+
+### 1. Docker Containers Not Starting
+
+**Issue**: Docker containers fail to start or keep restarting.
+
+**Solution**:
+- Ensure Docker is properly installed and running on your machine.
+- Check if the ports required by the containers (e.g., MySQL on port 3306) are already in use by another application. You may need to stop the other application or configure Docker to use different ports.
+- Review the Docker logs for more detailed error messages:
+
+    ```bash
+    docker logs <container_name>
+    ```
+
+## Roadmap
+
+This roadmap outlines the key milestones and upcoming features planned for the MagicPort PMS Project. Our goal is to continuously improve and expand the functionality of the API, ensuring it meets the evolving needs of our users.
+
+1. **Email Notifications**
+
+    - Implement email notifications for order confirmations, payment receipts, and status updates.
+    - Provide customizable email templates for different types of notifications.
+    - Ensure email deliverability and compliance with anti-spam regulations.
+
+2. **Caching**
+
+    - Implement a caching layer to improve API performance and reduce load times.
+    - Cache frequently accessed data such as product listings, order histories, and user sessions.
+    - Provide cache invalidation strategies to ensure data consistency.
+
+3. **Code Coverage**
+
+    - Achieve 100% code coverage for all unit and integration tests.
+    - Regularly monitor and maintain code coverage to ensure all new features are fully tested.
+
+## Support
+
+If you need assistance with the MagicPort PMS Project, we're here to help! Below are the various ways you can get support.
+
+### Report Issues
+
+If you've found a bug or would like to request a new feature, please submit an issue on our [GitHub Issues](https://github.com/bilalbaraz/magicport-pms/issues) page. When reporting issues, please include as much detail as possible to help us resolve the problem quickly.
+
+Thank you for using MagicPort PMS! We're committed to ensuring you have a smooth experience with our API.
