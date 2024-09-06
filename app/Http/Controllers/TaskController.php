@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\Task\CreateTaskRequest;
 use App\Services\TaskService;
 use Illuminate\Http\Request;
 
@@ -22,8 +23,11 @@ class TaskController extends Controller
         return response()->json(['success' => true, 'tasks' => $tasks]);
     }
 
-    public function create()
+    public function create(CreateTaskRequest $request)
     {
+        $data = $request->validated();
+        $this->taskService->createTask($data);
+
         return response()->json(['success' => true]);
     }
 

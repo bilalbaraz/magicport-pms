@@ -56,4 +56,16 @@ Retrieves projects list that have been created.
 **Endpoint:** `/projects/create`  
 **Method:** `POST`
 
-Creates project.
+### 6. **Retrieves Tasks**
+
+**Endpoint:** `/tasks`  
+**Method:** `GET`
+
+Creates task.
+
+### 6. **Create New Task**
+
+**Endpoint:** `/tasks/create`  
+**Method:** `POST`
+
+Creates task.
