@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix' => 'auth', 'as' => 'auth.'], function () {
     Route::post('sign-in', [AuthController::class, 'signIn'])->name('sign_in');
     Route::post('sign-up', [AuthController::class, 'signUp'])->name('sign_up');
-    Route::post('profile', [AuthController::class, 'profile'])->name('profile')->middleware('auth:sanctum');
+    Route::get('profile', [AuthController::class, 'profile'])->name('profile')->middleware('auth:sanctum');
 });
 
 Route::group(['middleware' => ['auth:sanctum']], function () {

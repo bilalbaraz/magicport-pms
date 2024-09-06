@@ -2,8 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Repositories\ProjectService;
-use Illuminate\Http\Request;
+use App\Services\ProjectService;
 
 class ProjectController extends Controller
 {
@@ -35,4 +34,3 @@ class ProjectController extends Controller
         return response()->json(['success' => true]);
     }
 }
-
