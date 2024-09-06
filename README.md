@@ -73,9 +73,9 @@ Your MagicPort PMS development environment should now be up and running. You can
 
 | Endpoint                      | Description                                            |
 |-------------------------------|--------------------------------------------------------|
-| `/x`                     | XXX                                                    |
-| `/x`            | XXX                                                    |
-| `/x`              | XXX                                                    |
+| `/auth/sign-up`               | This endpoint allows new users to register and create an account by providing their personal information and credentials.                                                    |
+| `/auth/sign-in`               | This endpoint enables existing users to log into the system by providing their registered email and password.                                                    |
+| `/auth/profile`               | This endpoint gives authenticated users access to their profile.                                                    |
 
 You can check out the full list of endpoints by visiting the [endpoints](docs/endpoints.md) page.
 
