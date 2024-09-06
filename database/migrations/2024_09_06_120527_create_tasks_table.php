@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('name');
             $table->longText('description')->nullable();
             $table->enum('status', [TaskStatusEnums::TO_DO, TaskStatusEnums::IN_PROGRESS, TaskStatusEnums::DONE]);
+            $table->softDeletes();
             $table->timestamps();
         });
     }
