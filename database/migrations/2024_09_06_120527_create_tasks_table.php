@@ -1,5 +1,6 @@
 <?php
 
+use App\Enums\TaskStatusEnums;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -16,7 +17,7 @@ return new class extends Migration
             $table->unsignedBigInteger('project_id');
             $table->string('name');
             $table->longText('description')->nullable();
-            $table->enum('status', ['TO-DO', 'IN-PROGRESS', 'DONE']);
+            $table->enum('status', [TaskStatusEnums::TO_DO, TaskStatusEnums::IN_PROGRESS, TaskStatusEnums::DONE]);
             $table->timestamps();
         });
     }
