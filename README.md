@@ -75,7 +75,7 @@ Your MagicPort PMS development environment should now be up and running. You can
 |-------------------------------|--------------------------------------------------------|
 | `/x`                     | XXX                                                    |
 | `/x`            | XXX                                                    |
-| `/x              | XXX                                                    |
+| `/x`              | XXX                                                    |
 
 You can check out the full list of endpoints by visiting the [endpoints](docs/endpoints.md) page.
 
